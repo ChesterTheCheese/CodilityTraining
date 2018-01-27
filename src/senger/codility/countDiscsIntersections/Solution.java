@@ -50,7 +50,6 @@ class Solution {
     return intersections > 10_000_000 ? -1 : intersections;
   }
 
-
   static void printf(String s, Object... args) {
     System.out.printf(s + "%n", args);
   }
