@@ -18,9 +18,7 @@ class Solution {
     int peakCount = peaks.size();
     printf("Peaks: %s", peaks);
 
-    int max = 0;
-
-    divisionLoop: for (int nrOfDivisions = 1; nrOfDivisions <= peakCount; nrOfDivisions++) {
+    divisionLoop: for (int nrOfDivisions = peakCount; nrOfDivisions > 0; nrOfDivisions--) {
       if (len % nrOfDivisions != 0) { // cannot be divided into equal groups
         printf("%s divisions: cannot be divided", nrOfDivisions);
         continue;
@@ -52,10 +50,10 @@ class Solution {
       }
 
       printf("\tGroup found.");
-      max = nrOfDivisions;
+      return nrOfDivisions;
     }
 
-    return max;
+    return 0;
   }
 
   static void printf(String s, Object... args) {
